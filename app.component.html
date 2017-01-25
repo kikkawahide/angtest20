@@ -1,0 +1,38 @@
+
+<h1>
+  {{title}}
+<form #f="ngForm" novalidate>
+  <input type="text" name="hoge" ngModel required>
+  <p [hidden]="!f.form.dirty || f.form.valid">必須入力です</p>
+<span *ngIf="hoge==='1'">1が入力されました</span>  
+
+
+</form>
+
+<!-- 
+
+  <input type="text" [(ngModel)]="hoge" required>
+  <input [value]="hoge"> 
+ <span *ngIf="hoge==='1'">1が入力されました<span>  
+
+   <span>{{hoge}}</span> 
+
+<form #f="ngForm" novalidate>
+  <input type="text" name="hoge" ngModel required>
+  <p [hidden]="!f.form.dirty || f.form.valid">必須入力です</p>
+</form>
+
+-->
+
+
+
+
+
+
+
+
+
+
+  
+
+</h1>
