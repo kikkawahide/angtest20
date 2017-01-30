@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import {
   CanActivate,
   CanActivateChild,
@@ -8,37 +7,36 @@ import {
   CanLoad
 } from '@angular/router';
 
-import { PagesComponent } from './pages.component';
+import { TopComponent } from './top.component';
 
 @Injectable()
-export class GuardsPagesService implements CanActivate, CanActivateChild, CanDeactivate<PagesComponent>, Resolve<PagesComponent>, CanLoad {
+export class GuardsTopService implements CanActivate, CanActivateChild, CanDeactivate<TopComponent>, Resolve<TopComponent>, CanLoad {
 
   constructor() { }
 
   canActivate(): boolean {
-    console.log('GuardsPagesService.canActivate()');
+    console.log('GuardsTopService.canActivate()');
     return true;
   }
 
   canActivateChild(): boolean {
-    console.log('GuardsPagesService.canActivateChild()');
+    console.log('GuardsTopService.canActivateChild()');
     return true;
   }
 
   canDeactivate(): boolean {
-    console.log('GuardsPagesService.canDeactivate()');
+    console.log('GuardsTopService.canDeactivate()');
     return true;
   }
 
   resolve(): boolean {
-    console.log('GuardsPagesService.resolve()');
+    console.log('GuardsTopService.resolve()');
     return true;
   }
 
   canLoad(): boolean {
-    console.log('GuardsPagesService.canLoad()');
+    console.log('GuardsTopService.canLoad()');
     return true;
   }
 }
-
 

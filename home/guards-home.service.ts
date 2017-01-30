@@ -7,13 +7,12 @@ import {
   CanLoad
 } from '@angular/router';
 
-import { HomeComponent } from './home.component' ;
+import { HomeComponent } from './home.component';
 
 @Injectable()
+export class GuardsHomeService implements CanActivate, CanActivateChild, CanDeactivate<HomeComponent>, Resolve<HomeComponent>, CanLoad {
 
-export class GuardsHomeService implements CanActivate, CanActivateChild, CanDeactivate<HomeComponent>, Resolve<HomeComponent>, CanLoad 
-
-constructor() { }
+  constructor() { }
 
   canActivate(): boolean {
     console.log('GuardsHomeService.canActivate()');
@@ -42,15 +41,3 @@ constructor() { }
 }
 
 
-
-
-
-
-
-
-@Injectable()
-export class GuardsHomeService {
-
-  constructor() { }
-
-}

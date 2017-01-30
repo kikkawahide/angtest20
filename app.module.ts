@@ -1,36 +1,37 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
-import { PagesModule} from './pages/pages.module'
+import { IssueModule } from './issue/issue.module';
+import { WikiModule } from './wiki/wiki.module';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FooterComponent } from './footer/footer.component';
+import { PagesComponent } from './pages/pages.component';
+import { TopComponent } from './top/top.component';
 
-import { routing, appRoutingProviders } from './app.routes';
+import { pagesRouting, pagesRoutingProviders } from './pages/pages.routes';
 
-
+import { GuardsPagesService } from './pages/guards-pages.service';
+import { GuardsTopService } from './top/guards-top.service';
+import { GuardsWikiService } from './wiki/guards-wiki.service';
+import { GuardsIssueService } from './issue/guards-issue.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    PageNotFoundComponent,
-    FooterComponent
-  ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    PagesModule,
-    routing
+    CommonModule,
+    IssueModule,
+    WikiModule,
+    pagesRouting
   ],
-  providers: [appRoutingProviders],
-  bootstrap: [AppComponent]
+  providers: [
+    pagesRoutingProviders,
+    GuardsPagesService,
+    GuardsTopService,
+    GuardsWikiService,
+    GuardsIssueService
+  ],
+  declarations: [
+    PagesComponent,
+    TopComponent
+  ]
 })
-export class AppModule { }
-
+export class PagesModule { }
 
