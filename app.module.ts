@@ -1,37 +1,32 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { IssueModule } from './issue/issue.module';
-import { WikiModule } from './wiki/wiki.module';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { IssueComponent } from './issue/issue.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WikiComponent } from './wiki/wiki.component';
 
-import { PagesComponent } from './pages/pages.component';
-import { TopComponent } from './top/top.component';
-
-import { pagesRouting, pagesRoutingProviders } from './pages/pages.routes';
-
-import { GuardsPagesService } from './pages/guards-pages.service';
-import { GuardsTopService } from './top/guards-top.service';
-import { GuardsWikiService } from './wiki/guards-wiki.service';
-import { GuardsIssueService } from './issue/guards-issue.service';
+import { routing, appRoutingProviders } from './app.routes';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IssueModule,
-    WikiModule,
-    pagesRouting
-  ],
-  providers: [
-    pagesRoutingProviders,
-    GuardsPagesService,
-    GuardsTopService,
-    GuardsWikiService,
-    GuardsIssueService
-  ],
   declarations: [
-    PagesComponent,
-    TopComponent
-  ]
+    AppComponent,
+    HomeComponent,
+    IssueComponent,
+    PageNotFoundComponent,
+    WikiComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    routing
+  ],
+  providers: [appRoutingProviders],
+  bootstrap: [AppComponent]
 })
-export class PagesModule { }
+export class AppModule { }
 
