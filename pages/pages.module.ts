@@ -24,4 +24,3 @@ import { pagesRouting, pagesRoutingProviders }  from './pages.routes';
 })
 export class PagesModule { }
 
-

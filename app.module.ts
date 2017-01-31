@@ -3,30 +3,32 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { PagesModule} from './pages/pages.module'
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { IssueComponent } from './issue/issue.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { WikiComponent } from './wiki/wiki.component';
+import { FooterComponent } from './footer/footer.component';
 
-import { routing, appRoutingProviders } from './app.routes';
+import { routing, appRoutingProviders }  from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    IssueComponent,
     PageNotFoundComponent,
-    WikiComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    PagesModule,
     routing
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 
